@@ -1,0 +1,2 @@
+3R	FlyBase	gene	835381	2503907	.	+	.	gene_id "FBgn0267431"; gene_name "CG45784"; gene_source "FlyBase"; gene_biotype "protein_coding";
+3R	FlyBase	transcript	835381	2503907	.	+	.	gene_id "FBgn0267431"; transcript_id "FBtr0346770"; gene_name "CG45784"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_name "CG45784-RA"; transcript_source "FlyBase"; transcript_biotype "protein_coding";
