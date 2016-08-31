@@ -2,5 +2,4 @@
   495  hisat2 -p 4 -x ~/data/day1_homework/BDGP6 ~/data/day1_homework/SRR072893.fastq -S
    505  samtools sort -@ 4 ~/data/day1_homework/SRR072893.sam -o ~/data/day1_homework/SRR072893.bam 
   507  samtools index ~/data/day1_homework/SRR072893.bam ~/data/day1_homework/SRR072893.index
-  513  stringtie ~/data/day1_homework/SRR072893.bam -o ~/data/day1_homework/SRR072893.gtf
-  
+  513  stringtie -p 4 -e -G ~/data/practice/BDGP6.Ensembl.85.gtf -B ~/data/day1_homework/SRR072893.bam -o ~/data/day1_homework/SRR072893.ctab
