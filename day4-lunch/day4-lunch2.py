@@ -42,7 +42,7 @@ for chromesome_selected in chromesome:
 	plt.subplot(3, 1, 2)
 	plt.plot(smoothed_2, label=title2)
 	plt.ylabel("FPKM")
-	plt.subplot(3, 1, 2)
+	plt.subplot(3, 1, 3)
 	plt.plot(smoothed_2, label="merged")
 	plt.ylabel("FPKM")
 	plt.plot(smoothed_1)
