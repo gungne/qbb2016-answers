@@ -37,15 +37,18 @@ for chromesome_selected in chromesome:
 	smoothed_2=file2_sorted["FPKM"].rolling(rolling_num).mean()
 	plt.title("Rolling mean (size = "+ str(rolling_num) + ") for "+ chromesome_selected)
 	plt.subplot(3, 1, 1)
-	plt.plot(smoothed_1, label=title1)
+	plt.plot(smoothed_1)
 	plt.ylabel("FPKM")
 	plt.subplot(3, 1, 2)
-	plt.plot(smoothed_2, label=title2)
+	plt.plot(smoothed_2)
 	plt.ylabel("FPKM")
 	plt.subplot(3, 1, 3)
-	plt.plot(smoothed_2, label="merged")
+	plt.plot(smoothed_1, label=title1)
+	plt.plot(smoothed_2, label=title2)
 	plt.ylabel("FPKM")
-	plt.plot(smoothed_1)
-	plt.plot(smoothed_2)
+	plt.legend(loc="upper right")
 	plt.savefig(chromesome_selected+".png")
 	plt.close()
+
+
+
