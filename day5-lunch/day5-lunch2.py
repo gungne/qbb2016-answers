@@ -25,7 +25,8 @@ for item in chromesome_type:
 	result_df.append(data_start_codon[data_start_codon["chr"] == item])
 
 output= pd.concat(result_df)
-start= output["start"]+500
+start= output["start"]-500
 end=output["start"]+500
 filtered_output = pd.concat([output["chr"],start,end,output["t_name"]], axis=1)
-print(filtered_output)
+filtered_output.columns = ['chromosome', 'start',"end","t_name"]
+print(filtered_output.to_csv(index=False,sep="\t"))
