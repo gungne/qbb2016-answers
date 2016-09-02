@@ -32,6 +32,6 @@ plt.figure()
 plt.title("MA for {} in MA view".format(re.findall("SRR[0-9]*/",file1_dir),re.findall("SRR[0-9]*/",file2_dir)))
 
 plt.scatter(x=MA_data_A,y=MA_data_M)
-plt.show()
+# plt.show()
 plt.savefig("task3MA.png")
 plt.close()
