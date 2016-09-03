@@ -31,11 +31,11 @@ data_df= pd.concat(result_df).sort(["t_name"])
 
 # print(data_df)
 tab_file=tab_file.sort(["name"])
-print(len(tab_file["mean"]),len(data_df["FPKM"]))
+print(len(tab_file["mean0"]),len(data_df["FPKM"]))
 
 
 if len(tab_file["mean"])==len(data_df["FPKM"]):
-	ols_md= ols(tab_file["mean"].tolist(),data_df["FPKM"].tolist())
+	ols_md= ols(tab_file["mean0"].tolist(),data_df["FPKM"].tolist())
 
 results = ols_md.fit()
 print(results.summary())

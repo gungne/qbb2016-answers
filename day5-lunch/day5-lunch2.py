@@ -24,9 +24,21 @@ result_df=[]
 for item in chromesome_type:
 	result_df.append(data_start_codon[data_start_codon["chr"] == item])
 
+
 output= pd.concat(result_df)
-start= output["start"]-500
-end=output["start"]+500
-filtered_output = pd.concat([output["chr"],start,end,output["t_name"]], axis=1)
-filtered_output.columns = ['chromosome', 'start',"end","t_name"]
-print(filtered_output.to_csv(index=False,sep="\t"))
+start_list=[]
+end_list=[]
+for index,item in enumerate(output["strand"]):
+	if item == "+":
+		start_list.append(output["start"].tolist()[index]-500)
+		end_list.append(output["start"].tolist()[index]+500)
+	else:
+		start_list.append(output["end"].tolist()[index]-500)
+		end_list.append(output["end"].tolist()[index]+500)
+
+start_list= pd.DataFrame(start_list,columns= ["start"])
+end_list=pd.DataFrame(end_list,columns=["end"])
+filtered_output = pd.concat([output["chr"],start_list,end_list,output["t_name"]],ignore_index=True,axis=3)
+# filtered_output.columns = ['chromosome', 'start',"end","t_name"]
+print(len(output["chr"]),len(start_list),len(filtered_output))
+print(filtered_output)
