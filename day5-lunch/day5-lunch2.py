@@ -26,19 +26,36 @@ for item in chromesome_type:
 
 
 output= pd.concat(result_df)
+start_ref=output["start"].tolist()
+end_ref=output["end"].tolist()
+chr_ref=output["chr"].tolist()
+t_name_ref=output["t_name"].tolist()
 start_list=[]
 end_list=[]
+chromesome_list=[]
+t_name_list= []
 for index,item in enumerate(output["strand"]):
 	if item == "+":
-		start_list.append(output["start"].tolist()[index]-500)
-		end_list.append(output["start"].tolist()[index]+500)
+		start_list.append(start_ref[index]-500)
+		end_list.append(start_ref[index]+500)
+		chromesome_list.append(chr_ref[index])
+		t_name_list.append(t_name_ref[index])
 	else:
-		start_list.append(output["end"].tolist()[index]-500)
-		end_list.append(output["end"].tolist()[index]+500)
+		start_list.append(end_ref[index]-500)
+		end_list.append(end_ref[index]+500)
+		chromesome_list.append(chr_ref[index])
+		t_name_list.append(t_name_ref[index])
+		
+for index, item in enumerate(chromesome_list):
+	print(chromesome_list[index],"\t",start_list[index],"\t",end_list[index],"\t",t_name_list[index])
 
-start_list= pd.DataFrame(start_list,columns= ["start"])
-end_list=pd.DataFrame(end_list,columns=["end"])
-filtered_output = pd.concat([output["chr"],start_list,end_list,output["t_name"]],ignore_index=True,axis=3)
-# filtered_output.columns = ['chromosome', 'start',"end","t_name"]
-print(len(output["chr"]),len(start_list),len(filtered_output))
-print(filtered_output)
+
+
+
+
+# print(bed_data)
+
+
+
+
+
