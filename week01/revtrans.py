@@ -26,6 +26,9 @@ for gi in protein_dict:
 			result= result+temp_fasta[count*3:count*3+3]
 			count=count+1
 	aligned_dict[gi]=result
-print(aligned_dict) 
+
+for gi in aligned_dict:
+	print('>'+gi)
+	print(aligned_dict[gi])
 # print(result)
 # print(count)
