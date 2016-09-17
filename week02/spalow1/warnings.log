@@ -1,0 +1,9 @@
+
+=== Error correction and assembling warnings:
+ * 0:00:00.916    16M / 5G    WARN    General                 (simplification.cpp        : 530)   The determined erroneous connection coverage threshold may be determined improperly
+ * 0:00:00.439    16M / 5G    WARN    General                 (kmer_coverage_model.cpp   : 217)   Too many erroneous kmers, the estimates might be unreliable
+ * 0:00:00.493    16M / 5G    WARN    General                 (kmer_coverage_model.cpp   : 343)   Valley value was estimated improperly, reset to 4
+ * 0:00:00.441    16M / 5G    WARN    General                 (kmer_coverage_model.cpp   : 343)   Valley value was estimated improperly, reset to 1
+ * 0:00:00.608    16M / 5G    WARN    General                 (pair_info_count.cpp       : 195)   Unable to estimate insert size for paired library #0
+ * 0:00:00.608    16M / 5G    WARN    General                 (pair_info_count.cpp       : 201)   None of paired reads aligned properly. Please, check orientation of your read pairs.
+======= Warnings saved to /Users/Gungnir/qbb2016-answers/week02/spalow1/warnings.log

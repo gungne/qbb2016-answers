@@ -1,0 +1,5 @@
+png('~/qbb2016-answers/week02/output/velhi1.png')
+dots = read.table("~/qbb2016-answers/week02/output/velhi1.rdot",header=T)
+plot(dots,type="l")
+title('Read_1 for velvet assembly')
+dev.off()

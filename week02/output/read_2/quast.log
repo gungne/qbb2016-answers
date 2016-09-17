@@ -1,0 +1,78 @@
+/Users/Gungnir/quast-4.3/quast.py -o ./output/read_2/ ./spahi2/contigs.fasta ./spalow2/contigs.fasta ./velhi2/contigs.fa ./vellow2/contigs.fa
+
+Version: 4.3
+
+System information:
+  OS: Darwin-15.6.0-x86_64-i386-64bit (macosx)
+  Python version: 2.7.10
+  CPUs number: 4
+
+Started: 2016-09-16 22:18:26
+
+Logging to /Users/Gungnir/qbb2016-answers/week02/output/read_2/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /Users/Gungnir/qbb2016-answers/week02
+Main parameters: 
+  Threads: 1, minimum contig length: 500, ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  1  ./spahi2/contigs.fasta ==> spahi2_contigs
+  2  ./spalow2/contigs.fasta ==> spalow2_contigs
+  3  ./velhi2/contigs.fa ==> velhi2_contigs
+  4  ./vellow2/contigs.fa ==> vellow2_contigs
+
+2016-09-16 22:18:26
+Running Basic statistics processor...
+  Contig files: 
+    1  spahi2_contigs
+    2  spalow2_contigs
+    3  velhi2_contigs
+    4  vellow2_contigs
+  Calculating N50 and L50...
+    1  spahi2_contigs, N50 = 100255, L50 = 1, Total length = 100255, GC % = 52.60, # N's per 100 kbp =  0.00
+    2  spalow2_contigs, N50 = 715, L50 = 1, Total length = 715, GC % = 53.85, # N's per 100 kbp =  0.00
+    3  velhi2_contigs, N50 = 33247, L50 = 2, Total length = 99832, GC % = 52.58, # N's per 100 kbp =  0.00
+    4  vellow2_contigs, N50 = 711, L50 = 1, Total length = 711, GC % = 54.01, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/coverage_histogram.pdf
+  Drawing spahi2_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/spahi2_contigs_coverage_histogram.pdf
+  Drawing spalow2_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/spalow2_contigs_coverage_histogram.pdf
+  Drawing velhi2_contigs coverage histogram (bin size: 4x)...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/velhi2_contigs_coverage_histogram.pdf
+  Drawing vellow2_contigs coverage histogram (bin size: 1x)...
+    saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/basic_stats/vellow2_contigs_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding option to enable it.
+
+2016-09-16 22:18:29
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2016-09-16 22:18:31
+RESULTS:
+  Text versions of total report are saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/report.html
+  PDF version (tables and plots) is saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/report.pdf
+  Icarus (contig browser) is saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/icarus.html
+  Log saved to /Users/Gungnir/qbb2016-answers/week02/output/read_2/quast.log
+
+Finished: 2016-09-16 22:18:31
+Elapsed time: 0:00:05.231784
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

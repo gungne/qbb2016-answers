@@ -1,0 +1,4 @@
+- left reads: [/Users/Gungnir/qbb2016-answers/week02/spahi2/split_input/reads_2_1.fastq]
+  orientation: fr
+  right reads: [/Users/Gungnir/qbb2016-answers/week02/spahi2/split_input/reads_2_2.fastq]
+  type: paired-end

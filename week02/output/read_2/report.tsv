@@ -1,0 +1,22 @@
+Assembly	spahi2_contigs	spalow2_contigs	velhi2_contigs	vellow2_contigs
+# contigs (>= 0 bp)	1	38	6	181
+# contigs (>= 1000 bp)	1	0	5	0
+# contigs (>= 5000 bp)	1	0	5	0
+# contigs (>= 10000 bp)	1	0	3	0
+# contigs (>= 25000 bp)	1	0	2	0
+# contigs (>= 50000 bp)	1	0	0	0
+Total length (>= 0 bp)	100255	10038	99893	24929
+Total length (>= 1000 bp)	100255	0	99832	0
+Total length (>= 5000 bp)	100255	0	99832	0
+Total length (>= 10000 bp)	100255	0	86735	0
+Total length (>= 25000 bp)	100255	0	71870	0
+Total length (>= 50000 bp)	100255	0	0	0
+# contigs	1	1	5	1
+Largest contig	100255	715	38623	711
+Total length	100255	715	99832	711
+GC (%)	52.60	53.85	52.58	54.01
+N50	100255	715	33247	711
+N75	100255	715	14865	711
+L50	1	1	2	1
+L75	1	1	3	1
+# N's per 100 kbp	0.00	0.00	0.00	0.00

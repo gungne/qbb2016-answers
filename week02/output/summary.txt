@@ -1,0 +1,16 @@
+vellow1/contigs.fa
+min: 92 max: 563 average: 137.30392156862746 n50: 141
+spalow1/contigs.fasta
+min: 213 max: 649 average: 288.225 n50: 257
+velhi1/contigs.fa
+min: 61 max: 38645 average: 7161.857142857143 n50: 33247
+spahi1/contigs.fasta
+min: 100255 max: 100255 average: 100255.0 n50: 100255
+vellow2/contigs.fa
+min: 92 max: 711 average: 137.7292817679558 n50: 140
+spalow2/contigs.fasta
+min: 206 max: 715 average: 264.1578947368421 n50: 255
+velhi2/contigs.fa
+min: 61 max: 38623 average: 16648.833333333332 n50: 33247
+spahi2/contigs.fasta
+min: 100255 max: 100255 average: 100255.0 n50: 100255

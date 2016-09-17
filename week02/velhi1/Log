@@ -1,0 +1,45 @@
+Fri Sep 16 16:21:24 2016
+ velveth ./velhi1/ 31 -fastq ./red
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+LONGSEQUENCES
+
+Fri Sep 16 16:21:35 2016
+ velveth ./velhi1/ 31 -fastq ./reads_1
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+LONGSEQUENCES
+
+Fri Sep 16 16:21:38 2016
+ velveth ./velhi1/ 31 -fastq ./reads_1.fastq
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+LONGSEQUENCES
+
+Fri Sep 16 16:31:20 2016
+ velvetg ./velhi1
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+LONGSEQUENCES
+
+Final graph has 32 nodes and n50 of 33217, max 38615, total 100061, using 0/306174 reads
