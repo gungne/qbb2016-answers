@@ -38,6 +38,10 @@ scoreboard={}
 # print(data_seq) 
 
 n = 3
+A_list=[0]*len(ref_seq['query'])
+U_list=[0]*len(ref_seq['query'])
+C_list=[0]*len(ref_seq['query'])
+G_list=[0]*len(ref_seq['query'])
 ref_seg_list=[ref_seq['query'][i:i+n] for i in range(0, len(ref_seq['query']), n)]
 for item in data_seq:
 	count= 0
@@ -73,40 +77,83 @@ for item in data_seq:
 					diff =diff_letters(ref_seg_n,seg_n)
 					nN= nN + diff
 					count= count + 1
-	scoreboard[item]=[nS,nN,obscure_count]
+				for index,chara in enumerate(seg_n):
+					if chara=='A' :
+						A_list[count*3-3+index]=A_list[count*3-3+index]+1
+					if chara=='U' :
+						U_list[count*3-3+index]=U_list[count*3-3+index]+1
+					if chara=='C' :
+						C_list[count*3-3+index]=C_list[count*3-3+index]+1
+					if chara=='G' :
+						G_list[count*3-3+index]=G_list[count*3-3+index]+1
 
-nS_list = []
-nN_list = []
-dis_list =[]
-for item in scoreboard:
-	nS_list.append(scoreboard[item][0])
-	nN_list.append(scoreboard[item][1])
-	dis_list.append(scoreboard[item][1]/(scoreboard[item][0]+1))
+NS_list=[0]*len(ref_seq['query'])
+query_list=[0]*len(ref_seq['query'])
+ratio_list=[0]*len(ref_seq['query'])
 
-
-nS_list=sorted(nS_list)
-nN_list=sorted(nN_list)
-dis_list=sorted(dis_list)
-fit_nS = stats.norm.pdf(nS_list, np.mean(nS_list), np.std(nS_list)) 
-fit_nN = stats.norm.pdf(nN_list, np.mean(nN_list), np.std(nN_list)) 
-fit_dis = stats.norm.pdf(dis_list, np.mean(dis_list), np.std(dis_list)) 
-plt.figure() 
-plt.subplot(3,1,1)
-plt.title('Normalized Distribution for nS')
-plt.plot(nS_list,fit_nS,'-o')
-plt.hist(nS_list,normed=True,alpha=0.5) 
-plt.subplot(3,1,2)
-plt.title('Normalized Distribution for nN')
-plt.plot(nN_list,fit_nN,'-o')
-plt.hist(nN_list,normed=True,alpha=0.5) 
-plt.subplot(3,1,3)
-plt.title('Normalized Distribution for nN/nS')
-plt.plot(dis_list,fit_dis,'-o')
-plt.hist(dis_list,normed=True,alpha=0.5) 
-plt.tight_layout()
-plt.savefig('week1_ver1.png')      
+for index,chara in enumerate(ref_seq['query']):
+	index=index-1
+	if chara=='A':
+		NS_list[index]=(U_list[index]+C_list[index]+G_list[index])
+		query_list[index]=A_list[index]+1
+	if chara=='T':
+		NS_list[index]=(A_list[index]+C_list[index]+G_list[index])
+		query_list[index]=U_list[index]+1
+	if chara=='C':
+		NS_list[index]=(U_list[index]+A_list[index]+G_list[index])
+		query_list[index]=C_list[index]+1
+	if chara=='G':
+		NS_list[index]=(U_list[index]+C_list[index]+A_list[index])
+		query_list[index]=G_list[index]+1
+	ratio_list[index]=NS_list[index]/(query_list[index])
 
 
+
+
+
+# scoreboard[item]=[nS,nN,obscure_count]
+
+# nS_list = []
+# nN_list = []
+# dis_list =[]
+# for item in scoreboard:
+# 	nS_list.append(scoreboard[item][0])
+# 	nN_list.append(scoreboard[item][1])
+# 	dis_list.append(scoreboard[item][1]/(scoreboard[item][0]+1))
+
+
+# print(NS_list)
+# nS_list=sorted(nS_list)
+# nN_list=sorted(nN_list)
+# dis_list=sorted(dis_list)
+# fit_nS = stats.norm.pdf(nS_list, np.mean(nS_list), np.std(nS_list)) 
+# fit_nN = stats.norm.pdf(nN_list, np.mean(nN_list), np.std(nN_list)) 
+# fit_dis = stats.norm.pdf(dis_list, np.mean(dis_list), np.std(dis_list)) 
+# plt.figure() 
+# plt.subplot(3,1,1)
+# plt.title('Normalized Distribution for nS')
+# plt.plot(nS_list,fit_nS,'-o')
+# plt.hist(nS_list,normed=True,alpha=0.5) 
+# plt.subplot(3,1,2)
+# plt.title('Normalized Distribution for nN')
+# plt.plot(nN_list,fit_nN,'-o')
+# plt.hist(nN_list,normed=True,alpha=0.5) 
+# plt.subplot(3,1,3)
+# plt.title('Normalized Distribution for nN/nS')
+# plt.plot(dis_list,fit_dis,'-o')
+# plt.hist(dis_list,normed=True,alpha=0.5) 
+# plt.tight_layout()
+# plt.savefig('week1_ver1.png')      
+
+print(ratio_list)
+plt.figure()
+plt.title('Significant Z-test nt')
+# plt.bar(np.arange(len(A_list)),A_list,alpha=0.8,width=0.8,color='g',edgecolor = "none")
+# plt.bar(np.arange(len(A_list)),U_list,alpha=0.8,width=0.8,color='r',edgecolor = "none")
+# plt.bar(np.arange(len(A_list)),C_list,alpha=0.8,width=0.8,color='blue',edgecolor = "none")
+# plt.bar(np.arange(len(A_list)),G_list,alpha=0.8,width=0.8,color='black')
+plt.bar(np.arange(len(ratio_list)),ratio_list,alpha=0.8,width=0.8,color='blue',edgecolor = "none")
+plt.savefig('week1_ver1_seq.png')  
 
 
 

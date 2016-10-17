@@ -1,0 +1,4 @@
+  File "/Users/Gungnir/meme/bin/dreme", line 760
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'

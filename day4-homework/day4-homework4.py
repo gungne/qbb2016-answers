@@ -11,9 +11,9 @@ file_dir =sys.argv[1]
 
 ctab_data= pd.read_csv(file_dir,sep="\t")
 
-FPKM_data= ctab_data["FPKM"].tolist()
+FPKM_data= (ctab_data["FPKM"]+1).tolist()
 
-density=gaussian_kde(FPKM_data)
+density=gaussian_kde(np.log(FPKM_data))
 # print(MA_data_Y)
 # print(ctab_data[filter_FPKM])
 

@@ -1,0 +1,30 @@
+Invoking:
+  getsize ER4lmt500/SubER4-G1Elen50lmt400.fa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.054481
+Invoking:
+  fasta-most -min 50 < ER4lmt500/SubER4-G1Elen50lmt400.fa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.173777
+Invoking:
+  fasta-center -dna -len 100 < ER4lmt500/SubER4-G1Elen50lmt400.fa 1> ER4lmt500/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.176514
+Invoking:
+  fasta-shuffle-letters ER4lmt500/seqs-centered ER4lmt500/seqs-shuffled -kmer 2 -tag -dinuc -dna -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.029137
+Invoking:
+  fasta-get-markov -nostatus -nosummary -dna -m 1 ER4lmt500/SubER4-G1Elen50lmt400.fa ER4lmt500/background
+Finished invoke:
+  name: bg  status: 0  time: 0.024385
+Invoking:
+  meme ER4lmt500/seqs-centered -oc ER4lmt500/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 20 -bfile ER4lmt500/background -dna -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 21.202226
+Invoking:
+  dreme -v 1 -oc ER4lmt500/dreme_out -png -dna -p ER4lmt500/seqs-centered -n ER4lmt500/seqs-shuffled
+Finished invoke:
+  name: dreme  status: 256  time: 0.160036
+Invoking:
+  centrimo -seqlen 60 -verbosity 1 -oc ER4lmt500/centrimo_out -bfile ER4lmt500/background ER4lmt500/SubER4-G1Elen50lmt400.fa ER4lmt500/meme_out/meme.xml motif_databases

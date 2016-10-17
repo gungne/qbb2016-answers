@@ -1,0 +1,24 @@
+# 1-order Markov frequencies from file ER4lmt500/SubER4-G1Elen50lmt400.fa
+# seqs: 96    min: 52    max: 520    avg: 106.0    sum: 10176    alph: DNA
+# order 0
+A 2.571e-01
+C 2.429e-01
+G 2.429e-01
+T 2.571e-01
+# order 1
+AA 7.187e-02
+AC 5.342e-02
+AG 7.927e-02
+AT 5.268e-02
+CA 7.827e-02
+CC 7.059e-02
+CG 1.508e-02
+CT 7.927e-02
+GA 6.339e-02
+GC 5.546e-02
+GG 7.059e-02
+GT 5.342e-02
+TA 4.315e-02
+TC 6.339e-02
+TG 7.827e-02
+TT 7.187e-02

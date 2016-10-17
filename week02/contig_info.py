@@ -32,7 +32,6 @@ for contig in sorted(contig_len):
 		break
 
 
-
 average_contig = sum_len/count
 print(re.sub('/.*week02/','',contig_dir))
 print('min: {} max: {} average: {} n50: {}'.format(min_contig,max_contig,average_contig,n50))

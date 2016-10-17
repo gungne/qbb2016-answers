@@ -1,0 +1,20 @@
+The authors present an SVM approach to discovery of motifs.
+
+1) General comments.
+
+a) Major
+
+The paper is unfortunately almost impossible to read due to confusing choices of nomenclature, missing tables, and missing methodological details.
+
+Regarding nomenclature, "gapped" in the context of motif discovery historically has always meant "variable length".  So the paper does not concern gapped motifs but rather motifs with "don't care" positions.  For DNA motifs, these are traditionally represented by the IUPAC "N" character, as done in Fig. 1.
+
+The "N" character is not used consistently in this paper.  It morphs to "k" in Table 2B, and to "g" in Fig. 6.  "N" should be used consistently.
+
+The main results are in tables 1, 2 and 3, which were not (initially) provided, are in supplementary files (so they are supplementary tables), and have no captions nor are sufficiently explained in the text.   The paper needs to be rewritten to explain how to interpret the huge lists of DNA words in  Table 1, why so few of these have "N"s in them, and why on earth a biologist would be interested in such a "comprehensive picture of all the gapped k-mers".  This is not an interesting output format for a motif discovery algorithm.
+
+Fig. 6 presents a logo of an "enriched gapped k-mer motif".  But the paper does discuss why it makes any sense to treat "N" as an actual character (here shown confusingly as "g").  Nor is any evidence given that the presence of a "g" at position 4 in the motif implies a dependence on the nucleotides at position 2 and 3 any more than if the "gap" had been consistently filled with an actual nucleotide.
+
+Additional results are presented in Fig 5 in terms of ROC curves, but this figure is not decipherable by me since there is no legend to explain what the various colored lines represent.
+
+The paper also fails to compare the new method to existing methods.
+Many motif discovery approaches (e.g., using regular expressions or PWMs) easily handle motifs with "don't care" positions.  The paper needs to compare the new method's results with those approaches.  It should consider both ability to discover motifs and the interpretability of the results.  If the authors are proposing the new approach as a way to classify promoters or enhancers (CRMs), then they need to compare their approaches accuracy with existing methods of promoter/enhancer prediction.

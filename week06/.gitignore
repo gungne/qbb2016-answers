@@ -1,0 +1,14 @@
+./samCTCFER4.sam
+./samCTCFG1E.sam
+./samiptER4.sam
+./samiptG1E.sam
+./used data/chr19.fa
+./used data/CTCF_ER4.fastq
+./used data/CTCF_G1E.fastq
+./used data/idxchr19.1.bt2
+./used data/idxchr19.2.bt2
+./used data/idxchr19.4.bt2
+./used data/idxchr19.rev.1.bt2
+./used data/idxchr19.rev.2.bt2
+./used data/input_ER4.fastq
+./used data/input_G1E.fastq
