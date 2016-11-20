@@ -4,7 +4,7 @@ import sys
 import pylab
 import scipy
 import scipy.cluster.hierarchy as sch
-
+from scipy.stats import ttest_rel
 
 data_obj = open(sys.argv[1] )
 # ctcf_ obj = open(sys.argv[2] )
@@ -22,23 +22,25 @@ for rows in data_obj.readlines():
 		continue
 	content_matrix.append(rows.rstrip('\n').split('\t')[0:])
 	Data_mat.append(rows.rstrip('\n').split('\t')[1:])
-	labels.append(rows.rstrip('\n').split('\t')[0])
+	# labels.append(rows.rstrip('\n').split('\t')[0])
 	gene_dict[rows.rstrip('\n').split('\t')[0]]=rows.rstrip('\n').split('\t')[1:]
 	# print(rows.rstrip('\n').split('\t')[0])
 # Data_mat= content_matrix[:][2:]
 # print(Data_mat)
+labels = header_matrix[1:]
 D= np.matrix(Data_mat)
-fig = pylab.figure()
 
+t, p = ttest_rel([np.float32(x) for x in D[:,1]],[np.float32(x) for x in D[:,0]])
 
-Y = sch.linkage(D, method='centroid')
-Z = sch.dendrogram(Y, orientation='right', labels=labels )
+# D = D[index,:]
+# D = D[:,index]
+# im = axmatrix.matshow(D, aspect='auto', origin='lower')
+# axmatrix.set_xticks([])
+# axmatrix.set_yticks([])
 
-# idx = Z['leaves']
-# D = D[idx,:]
-# D = D[:,idx]
-pylab.matshow(D, aspect='auto', origin='lower', cmap=pylab.cm.YlGnBu)
+# Plot colorbar.
+# axcolor = fig.add_axes([0.91,0.1,0.02,0.8])
+# pylab.colorbar(im, cax=axcolor)
 
-
-fig.show()
-fig.savefig('dendrogram.png')
+# Display and save figure.
+print(p)
