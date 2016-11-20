@@ -4,7 +4,7 @@ import sys
 import pylab
 import scipy
 import scipy.cluster.hierarchy as sch
-
+import matplotlib.pyplot as plt
 
 data_obj = open(sys.argv[1] )
 # ctcf_ obj = open(sys.argv[2] )
@@ -28,17 +28,27 @@ for rows in data_obj.readlines():
 # Data_mat= content_matrix[:][2:]
 # print(Data_mat)
 D= np.matrix(Data_mat)
-fig = pylab.figure()
+fig = plt.figure()
 
-
+# dendro=fig.add_subplot(111)
 Y = sch.linkage(D, method='centroid')
-Z = sch.dendrogram(Y, orientation='right', labels=labels )
+Z = sch.dendrogram(Y, orientation='right', labels=labels, no_plot= True)
+D_new=np.zeros((500,6))
+# for 
+# print(Z['leaves'][1])
+labels_new=labels
+for index,idx in enumerate(Z['leaves']):
+	D_new[index,:]=np.float32(D[idx,:])
+	labels_new[index]=labels[idx]
 
-# idx = Z['leaves']
-# D = D[idx,:]
-# D = D[:,idx]
-pylab.matshow(D, aspect='auto', origin='lower', cmap=pylab.cm.YlGnBu)
+print(D_new)
+ax= fig.add_subplot(111)
+heatmap=ax.matshow(D_new, aspect='auto', origin='lower', cmap=pylab.cm.YlGnBu)
+fig.colorbar(heatmap)
+ax.set_yticks(np.arange(1, 500, 1.0))
+#format settings 
+ax.set_yticklabels(['']+labels_new)
+ax.set_xticklabels(['']+header_matrix[1:])
 
-
-fig.show()
-fig.savefig('dendrogram.png')
+# fig.show()
+fig.savefig('heatmap.png')
